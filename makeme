@@ -1,4 +1,4 @@
 . build/envsetup.sh
-lunch 20
+lunch cyanogen_espresso-eng
 export USE_CCACHE=1
 make -j4 $*
