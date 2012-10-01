@@ -1,0 +1,24 @@
+#!/bin/bash
+
+path="/home/wesgarner/wesley/asdf4"
+
+cd "$path"
+find . -iname '*.jpg' | while read file
+do
+  #  exif -t 0x9003 = 'Date (original)'
+  exif_time=$( exif -t 0x9003 "$file" | grep -oP '\d{4}:\d{2}:\d{2} \d{2}:\d{2}:\d{2}' )
+  status=$?
+  if [ "$status" == "0" ]  # skip files with no exif data/no date field
+  then
+    echo "$file|$exif_time"
+  fi 
+done > pics_list.txt       # write file/exif_time to file
+
+i=0
+sort -t'|' -k2 pics_list.txt | while read line
+do
+  i=$((i+1))
+  file=$( echo $line | awk 'BEGIN { FS="|" }; { print $1 }' )
+  time=$( echo $line | awk 'BEGIN { FS="|" }; { print $2 }' )
+  echo $file '=>' img_$( printf "%06g" $i ).jpg "(#$i)" '||' img_$( echo $time | sed 's/[^0-9]//g').jpg "($time)"
+done

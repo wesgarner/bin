@@ -1,0 +1,2 @@
+for file in *.odex ; do
+echo Deodexing $file

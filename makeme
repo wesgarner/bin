@@ -1,4 +1,3 @@
 . build/envsetup.sh
-lunch cyanogen_espresso-eng
 export USE_CCACHE=1
-make -j4 $*
+brunch doubleshot
