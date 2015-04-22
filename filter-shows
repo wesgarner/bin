@@ -1,0 +1,19 @@
+#!/bin/bash
+# Description:       Moves files/folders of a criteria to a directory
+
+# Variables
+FINDLOCATION="/home/osmc/Movies"
+MVLOCATION="/home/osmc/TV Shows/"
+CRITERIA="*S[0-9][0-9]E[0-9][0-9]*"
+
+# array=$(find "$FINDLOCATION" -maxdepth 1 -name "$CRITERIA" -printf '"%p"\n')
+
+# find "$FINDLOCATION" -name "$CRITERIA" -exec sh -c 'echo exec mv "$@" "$MVLOCATION"' X '{}' +
+# for f in $array; do echo mv "$f" "$MVLOCATION"; done
+
+# find "$FINDLOCATION" -maxdepth 1 -name "$CRITERIA" | while read file
+# do
+# 	mv "$file" "'$MVLOCATION'"
+# done
+
+find "$FINDLOCATION" -maxdepth 1 -name "$CRITERIA" -print0 | xargs -0 mv --target-directory="$MVLOCATION"

@@ -1,0 +1,14 @@
+#!/bin/bash
+# Description:       Archive files from selected directiories
+#                    after X amount of time to new directory
+
+# Variables
+FROMPATH=/home/omsc
+TOPATH=/media/XXX
+FOLDERS=("Movies" "TV Shows")
+DAYS=14
+
+for ix in ${!FOLDERS[*]}
+do
+	echo find $FROMPATH/${FOLDERS[$ix]} -mtime +$DAYS -exec mv "{}" $TOPATH/ \;
+done
