@@ -2,7 +2,7 @@
 # Description:       Cleanup files
 
 # Variables
-loc="/home/osmc"
+loc="/home/$USER"
 folders=( "Movies" "TV Shows" )
 array=( "$a$ple*" "*.txt" "RARGB.com*" "*.nfo" "*.jpg" "*.jpeg" "*.png" "ETRG.mp4" )
 

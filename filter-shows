@@ -2,8 +2,8 @@
 # Description:       Moves files/folders of a criteria to a directory
 
 # Variables
-FINDLOCATION="/home/osmc/Movies"
-MVLOCATION="/home/osmc/TV Shows/"
+FINDLOCATION="/home/$USER/Movies"
+MVLOCATION="/home/$USER/TV Shows/"
 CRITERIA="*S[0-9][0-9]E[0-9][0-9]*"
 
 # array=$(find "$FINDLOCATION" -maxdepth 1 -name "$CRITERIA" -printf '"%p"\n')

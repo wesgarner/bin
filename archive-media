@@ -3,7 +3,7 @@
 #                    after X amount of time to new directory
 
 # Variables
-FROMPATH=/home/omsc
+FROMPATH=/home/$USER
 TOPATH=/media/XXX
 FOLDERS=("Movies" "TV Shows")
 DAYS=14
