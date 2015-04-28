@@ -1,0 +1,8 @@
+#!/bin/bash
+# Description:       Placeholder to run cleanup and filter-shows
+
+# Variables
+loc="/usr/local/bin"
+
+$loc/cleanup
+$loc/filter-shows
