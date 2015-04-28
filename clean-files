@@ -1,0 +1,20 @@
+#!/bin/bash
+# Description:       Cleanup files
+
+# Variables
+loc="/home/osmc"
+folders=( "Movies" "TV Shows" )
+array=( "$a$ple*" "*.txt" "RARGB.com*" "*.nfo" "*.jpg" "*.jpeg" "*.png" "ETRG.mp4" )
+
+
+# Delete any samples, txt, jp(e)g, nfo, distributor files
+
+for i in "${folders[@]}"
+do
+    for j in "${array[@]}"
+    d
+        rm -rf $loc/$i/*/$j
+    done
+done
+
+

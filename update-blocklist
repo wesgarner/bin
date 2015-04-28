@@ -1,0 +1,15 @@
+#!/bin/bash
+# Description:       Update user-maintained IP blocklist
+#                    List: Bluetack level1
+
+# Variables
+FILELOCATION=/home/osmc/bt_level1.p2p
+ZIPLOCATION="http://list.iblocklist.com/?list=ydxerpxkpcfqjaybcssw&fileformat=p2p&archiveformat=zip"
+TMPLOCATION=/tmp/bt_level1.zip
+SERVICE=qbittorrent
+
+wget $ZIPLOCATION -O $TMPLOCATION
+unzip -p $TMPLOCATION > $FILELOCATION
+rm $TMPLOCATION
+
+service $SERVICE restart
