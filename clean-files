@@ -12,7 +12,7 @@ array=( "$a$ple*" "*.txt" "RARGB.com*" "*.nfo" "*.jpg" "*.jpeg" "*.png" "ETRG.mp
 for i in "${folders[@]}"
 do
     for j in "${array[@]}"
-    d
+    do
         rm -rf $loc/$i/*/$j
     done
 done
