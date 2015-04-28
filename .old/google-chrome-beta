@@ -1,0 +1,1 @@
+/usr/bin/google-chrome-beta --touch-devices=$(lsusb -d 0x04f3:0x010c | awk '/Device/ {print $4;}' | sed 's/[^0-9]*//g') &

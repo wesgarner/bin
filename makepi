@@ -1,0 +1,3 @@
+export PATH=~/src/rpi-tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin-ccache:~/src/rpi-tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin:$PATH
+# ./configure --host=arm-linux-gnueabihf -prefix=/home/wesgarner/src/rpi-tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64
+make -j1 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- $*

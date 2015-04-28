@@ -1,0 +1,2 @@
+echo "FYI - Must be run as root!"
+service plexmediaserver restart
