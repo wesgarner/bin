@@ -1,0 +1,20 @@
+#!/bin/bash
+# Description:       Cleanup files for Plex
+
+# Variables
+loc="/home/$USER" # directory to seek
+folders=( "Movies" "TV Shows" ) # folders to seek
+array=( "$a$ple*" "*.txt" "RARGB.com*" "*.nfo" "*.jpg" "*.jpeg" "*.png" "ETRG.mp4" ) # variables to seek
+
+
+# Delete any samples, txt, jp(e)g, nfo, distributor files
+
+for i in "${folders[@]}"
+do
+    for j in "${array[@]}"
+    do
+        rm -rf $loc/$i/*/$j
+    done
+done
+
+
