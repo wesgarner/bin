@@ -2,10 +2,9 @@
 # Description:       Cleanup files for Plex
 
 # Variables
-USER=osmc
 loc="/home/$USER" # directory to seek
 folders=( "Movies" "TV Shows" ) # folders to seek
-array=( "Sample" "sample*" "*.txt" "RARGB.com*" "*.nfo" "*.jpg" "*.jpeg" "*.png" "ETRG.mp4" ) # variables to seek
+array=( "$a$ple*" "*.txt" "RARGB.com*" "*.nfo" "*.jpg" "*.jpeg" "*.png" "ETRG.mp4" ) # variables to seek
 
 
 # Delete any samples, txt, jp(e)g, nfo, distributor files
@@ -14,9 +13,7 @@ for i in "${folders[@]}"
 do
     for j in "${array[@]}"
     do
-        find "$loc/$i" -name "$j" -print0 -exec rm -rf {} \;
-        # rm -rf \"$loc/$i/$j\"
-        # rm -rf \"$loc/$i/*/$j\"
+        rm -rf $loc/$i/*/$j
     done
 done
 

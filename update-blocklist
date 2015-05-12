@@ -12,4 +12,4 @@ wget $ZIPLOCATION -O $TMPLOCATION
 unzip -p $TMPLOCATION > $FILELOCATION
 rm $TMPLOCATION
 
-service $SERVICE restart
+# service $SERVICE restart
